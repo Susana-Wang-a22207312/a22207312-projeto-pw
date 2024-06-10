@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'praias',
     'autenticacao',
     'portfolio',
+    'meteo',
 ]
 
 MIDDLEWARE = [

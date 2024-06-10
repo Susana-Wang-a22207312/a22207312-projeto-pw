@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão Meteorológica para Lisboa</title>
+</head>
+<body>
+    <h1>Previsão Meteorológica para Lisboa</h1>
+    <p>Data: {{ forecast.data.0.forecastDate }}</p>
+    <p>Cidade: Lisboa</p>
+    <p>Temperatura Mínima: {{ forecast.data.0.tMin }}°C</p>
+    <p>Temperatura Máxima: {{ forecast.data.0.tMax }}°C</p>
+
+</body>
+</html>

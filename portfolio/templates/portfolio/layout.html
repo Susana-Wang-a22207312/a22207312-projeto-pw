@@ -35,7 +35,7 @@
                                 <li><a href="{% url 'blogs:index' %}" target="_blank">Aplicação Artigos</a></li>
                                 <li><a href="{% url 'cursos:cursos' %}" target="_blank">Aplicação Curso</a></li>
                                 <li><a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">DEISI Chess</a></li>
-                                <li><a href="{% url 'portfolio:2nd_year' %}">Meteorologia</a></li>
+                                <li><a href="{% url 'meteo:index' %}" target="_blank">Meteorologia</a></li>
                                 <li><a href="{% url 'praias:praias' %}" target="_blank">Aplicação Praias</a></li>
                             </ul>
                         <li><a href="{% url 'portfolio:3rd_year' %}">3rd Year</a></li>
@@ -75,6 +75,18 @@
         setInterval(updateDateTime, 1000);
         updateDateTime(); // Initial call to set the date and time immediately
 
+    </script>
+      <button id="darkModeToggle">Mode Change</button>
+     <script>
+
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            toggleDarkMode();
+        });
     </script>
 </body>
 </html>

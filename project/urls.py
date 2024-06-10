@@ -30,5 +30,6 @@ urlpatterns = [
     path('blogs/', include('blogs.urls')),
     path('cursos/', include('lusofona.urls')),
     path('praias/', include('praias.urls')),
+    path('meteorologia/', include('meteo.urls')),
 
 ]
