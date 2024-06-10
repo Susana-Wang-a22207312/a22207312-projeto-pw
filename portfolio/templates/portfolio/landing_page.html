@@ -6,12 +6,12 @@ Suzy's Store - Portfolio
 
 {% block content %}
 <section class="about-me">
-      <h4>If you have any questions or you wanna know more about me, be sure to check out&nbsp; <a href="{% url 'portfolio:me_by_me' %}">FAQ</a>.</h4>
+    <h4>If you have any questions or you wanna know more about me, be sure to check out&nbsp; <a href="{% url 'portfolio:me_by_me' %}">FAQ</a>.</h4>
 </section>
 
 <section class="categories">
     <h2>Categories</h2>
-     <div class="category-grid">
+    <div class="category-grid">
         <div class="category-item"><a href="{% url 'portfolio:1st_year' %}">1st Year</a></div>
         <div class="category-item"><a href="{% url 'portfolio:2nd_year' %}">2nd Year</a></div>
         <div class="category-item"><a href="{% url 'portfolio:3rd_year' %}">3rd Year</a></div>
@@ -23,11 +23,34 @@ Suzy's Store - Portfolio
 <section class="categories">
     <h2>Best Sellers</h2>
     <div class="category-grid">
-        <div class="category-item"><a href="{% url 'bandas:bandas' %}"target="_blank">Aplicação Bandas</a></div>
-        <div class="category-item"><a href="{% url 'blogs:index' %}"target="_blank">Aplicação Artigos</a></div>
-        <div class="category-item"><a href="{% url 'cursos:cursos' %}"target="_blank">Aplicação Curso</a></div>
-        <div class="category-item"><a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">DEISI Chess</a></div>
-        <div class="category-item">Meteorologia</div>
+        <div class="category-item">
+            <a href="{% url 'bandas:bandas' %}" target="_blank">
+                <img src="/media/portfolio/icons8-bands-64.png" width = "64px">
+                <span>Aplicação Bandas</span>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="{% url 'blogs:index' %}" target="_blank">
+                <img src="/media/portfolio/icons8-blog-64.png" width = "64px">
+                <span>Aplicação Artigos</span>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="{% url 'cursos:cursos' %}" target="_blank">
+                <img src="/media/portfolio/icons8-universidade-60.png"width = "64px">
+                <span>Aplicação Curso</span>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">
+                <img src="/media/portfolio/icons8-jogo-de-xadrez-100.png" width = "64px">
+                <span>DEISI Chess</span>
+            </a>
+        </div>
+        <div class="category-item">
+            <img src="/media/portfolio/icons8-tempo-chuvoso-100.png" width = "64px">
+            <span>Meteorologia</span>
+        </div>
     </div>
 </section>
 {% endblock %}

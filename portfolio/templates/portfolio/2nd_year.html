@@ -1,12 +1,59 @@
 {% extends 'portfolio/layout.html' %}
 
-{% block title %}
-Suzy's Store - 2º ano de LEI
-{% endblock %}
 
 {% block content %}
 <section class="category-content">
     <h2>2º ano de LEI</h2>
-    <!-- Add your content specific to 2º ano de LEI -->
+    <div class="category-grid">
+        <div class="category-item">
+            <a href="{% url 'bandas:bandas' %}" target="_blank">
+                <img src="/media/portfolio/icons8-bands-64.png" width="64px">
+                <div class="description">
+                    <h3>Aplicação Bandas</h3>
+                    <p>This is a description of the Aplicação Bandas, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="{% url 'bandas:bandas' %}" target="_blank">Click <u>HERE</u> to see for yourself</a>
+                </div>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="{% url 'blogs:index' %}" target="_blank">
+                <img src="/media/portfolio/icons8-blog-64.png" width="64px">
+                <div class="description">
+                    <h3>Aplicação Artigos</h3>
+                    <p>This is a description of the Aplicação Artigos, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="{% url 'blogs:index' %}" target="_blank">Click <u>HERE</u> to see for yourself</a>
+                </div>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="{% url 'cursos:cursos' %}" target="_blank">
+                <img src="/media/portfolio/icons8-universidade-60.png" width="64px">
+                <div class="description">
+                    <h3>Aplicação Curso</h3>
+                    <p>This is a description of the Aplicação Curso, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="{% url 'cursos:cursos' %}" target="_blank">Click <u>HERE</u> to see for yourself</a>
+                </div>
+            </a>
+        </div>
+        <div class="category-item">
+            <a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">
+                <img src="/media/portfolio/icons8-jogo-de-xadrez-100.png" width="64px">
+                <div class="description">
+                    <h3>DEISI Chess</h3>
+                    <p>This is a description of the DEISI Chess, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">Click <u>HERE</u> to see for yourself</a>
+                </div>
+            </a>
+        </div>
+        <div class="category-item">
+            <img src="/media/portfolio/icons8-tempo-chuvoso-100.png" width="64px">
+            <div class="description">
+                <h3>Meteorologia</h3>
+                <p>This is a description of the Meteorologia, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <!-- Add your link here if applicable -->
+            </div>
+        </div>
+        <!-- Add more best seller items as needed -->
+    </div>
 </section>
 {% endblock %}

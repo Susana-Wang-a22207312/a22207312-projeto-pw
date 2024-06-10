@@ -201,13 +201,37 @@ nav ul li:hover > a {
 }
 
 .category-item {
-    background: #007bff;
+    background: #80bfff;
     color: white;
     padding: 1.5rem;
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
     margin-bottom: 1rem;
+}
+
+.category-item img {
+    display: block;
+    margin: 0 auto 1rem; /* Center the image and add space below it */
+}
+
+.category-item span {
+    font-weight: bold; /* Make the text bold */
+}
+
+.category-item:hover {
+    background-color: #66a3ff;
+    transform: scale(1.05);
+}
+
+.category-item:active {
+    transform: scale(1.1);
+}
+
+.category-item a {
+    text-decoration: none;
+    color: white;
 }
 
 @media (min-width: 768px) {
