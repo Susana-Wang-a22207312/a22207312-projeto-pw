@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blogs</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blogs/estilo.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5d1319edfb.js" crossorigin="anonymous"></script>
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>Artigos</h1>
+        <a href="{% url 'blogs:index' %}"><button class="btn-main">Página Principal</button></a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}"><button class="btn-logout">Logout</button></a>
+        {% else %}
+            <a href="{% url 'login' %}"><button class="btn-login">Login</button></a>
+        {% endif %}
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

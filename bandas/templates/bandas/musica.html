@@ -1,0 +1,14 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h3>Song: {{ musica.titulo }}</h3>
+
+    <p>Duration: {{ musica.duracao}} seconds </p>
+    <p>Track number: {{ musica.numero_faixa}}</p>
+
+    <p>Album: <a href="{% url 'bandas:album' musica.album.titulo %}">{{ musica.album }}</a></p>
+    <p>Artist: <a href="{% url 'bandas:banda' musica.album.banda.id %}">{{ musica.album.banda }}</a></p>
+
+
+
+{% endblock %}

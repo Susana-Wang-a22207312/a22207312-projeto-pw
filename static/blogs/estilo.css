@@ -1,0 +1,60 @@
+body {
+    background: #f4f4f4;
+    color: #333;
+    font-family: Georgia, serif;
+    line-height: 1.6;
+}
+
+button {
+    font-family: Georgia, serif;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add {
+    background-color: #dbe4ff;
+    color: #333;
+}
+
+.btn-edit {
+    background-color: #fff3cd;
+    color: #333;
+}
+
+.btn-delete {
+    background-color: #f8d7da;
+    color: #333;
+}
+
+.btn-logout,
+.btn-login {
+    background-color: #e2e3e5;
+    color: #333;
+}
+
+.btn-main {
+    background-color: #ffcc80;
+    color: #333;
+}
+
+button:hover {
+    background-color: #e9ecef;
+}
+
+.link-list a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link-list a:hover {
+    background-color: #0056b3;
+}

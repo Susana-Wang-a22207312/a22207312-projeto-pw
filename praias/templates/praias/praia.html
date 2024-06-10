@@ -1,0 +1,17 @@
+{% extends 'praias/layout.html' %}
+
+{% block content %}
+
+<a href="{% url 'praias:praias' %}"><button>Página Principal</button></a>
+
+<h2>{{ praia.nome }}</h2>
+<p>Distrito: {{ praia.regiao.distrito }}</p>
+
+<p>Serviços:</p>
+<ul>
+    {% for servico in praia.servicos.all %}
+        <li>{{ servico.tipo_servico }} - Custo por volta dos {{ servico.custo }} euros por pessoa.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

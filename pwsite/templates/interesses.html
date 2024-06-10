@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Web</title>
+    <style>
+        body {
+            background: pink;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Programação Web</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'pwsite:index' %}">Introducao</a>
+        <a href="{% url 'pwsite:sobre' %}">Sobre</a>
+        <a href="{% url 'pwsite:interesses' %}">Interesses</a>
+    </nav>
+
+    <main>
+        <h2>Interesses</h2>
+        <p>Nesta cadeira gostei/gostava que:</p>
+        <ul>
+            <li><strong>Honestamente não sei</strong> </li>
+
+        </ul>
+
+    </main>
+
+    <footer>
+        <p>&copy; {{data}} Programação Web, Universidade Lusófona - Todos os direitos reservados à Suzy.</p>
+    </footer>
+
+</body>
+</html>

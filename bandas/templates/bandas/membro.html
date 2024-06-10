@@ -1,0 +1,10 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h3>Member: {{ membro.nome }}</h3>
+
+    <p>Band:  <a href="{% url 'bandas:banda' membro.banda.id %}">{{ membro.banda }}</a></p>
+    <p>Role in the band: {{ membro.papel_na_banda }}</p>
+
+
+{% endblock %}

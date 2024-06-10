@@ -1,0 +1,39 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h3>Edit Album: {{ album.titulo }}</h3>
+
+
+    <form action="{% url 'bandas:edita_album' album.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Changes" class="btn-save">
+    </form>
+
+
+    <h4>Songs:</h4>
+    <ul>
+        {% for musica in album.musicas.all %}
+            <li>
+                <strong>{{ musica.titulo }}</strong> - {{ musica.duracao }}
+
+                <a href="{% url 'bandas:edita_musica' musica.id %}" class="btn-edit">Edit Song</a>
+
+                <form action="{% url 'bandas:apaga_musica' musica.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete Song" class="btn-delete" onclick="return confirm('Are you sure you want to delete this song?')">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+    <a href="{% url 'bandas:nova_musica' album.id %}" class="btn-add">
+        <button>Add New Song</button>
+    </a>
+
+
+    <a href="{% url 'bandas:album' album.titulo %}" class="btn-back">
+        <button>Back to Album</button>
+    </a>
+{% endblock %}

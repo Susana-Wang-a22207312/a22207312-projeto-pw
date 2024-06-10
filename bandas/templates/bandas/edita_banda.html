@@ -1,0 +1,15 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h3>Edit Banda Information</h3>
+
+    <form action="{% url 'bandas:edita_banda' banda.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Changes">
+    </form>
+
+    <a href="{% url 'bandas:banda' banda.id %}">
+        <button>Cancel</button>
+    </a>
+{% endblock %}

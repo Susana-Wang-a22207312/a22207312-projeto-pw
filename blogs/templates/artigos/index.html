@@ -1,0 +1,35 @@
+{% extends 'artigos/layout.html' %}
+
+{% block content %}
+    <h2>Artigos</h2>
+    <ul>
+        {% for artigo in artigos %}
+            <li>
+                <a href="{% url 'blogs:artigo' artigo.titulo %}" class="link-list">{{ artigo.titulo }}</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'blogs:edita_artigo' artigo.id %}"><button class="btn-edit">Editar</button></a>
+                    <a href="{% url 'blogs:apaga_artigo' artigo.id %}"><button class="btn-delete">Apagar</button></a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+        <a href="{% url 'blogs:novo_artigo' %}"><button class="btn-add">Adicionar Novo Artigo</button></a>
+    {% endif %}
+
+    <h2>Autores</h2>
+    <ul>
+        {% for autor in autores %}
+            <li>
+                <a href="{% url 'blogs:autor' autor.nome %}" class="link-list">{{ autor.nome }}</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'blogs:edita_autor' autor.id %}"><button class="btn-edit">Editar</button></a>
+                    <a href="{% url 'blogs:apaga_autor' autor.id %}"><button class="btn-delete">Excluir</button></a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+        <a href="{% url 'blogs:novo_autor' %}"><button class="btn-add">Adicionar Novo Autor</button></a>
+    {% endif %}
+{% endblock %}

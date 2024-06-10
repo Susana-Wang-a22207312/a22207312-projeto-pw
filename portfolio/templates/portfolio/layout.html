@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Suzy's Store{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/estilo.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-font-awesome-key.js" crossorigin="anonymous"></script>
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Suzy Store</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'portfolio:landing_page' %}">Home</a></li>
+                <li class="dropdown">
+                    <a href="{% url 'portfolio:categories' %}">Categories</a>
+                    <ul class="content">
+                        <li class="dropdown-submenu">
+                            <a href="#">1st Year</a>
+                            <ul class="sub-content">
+                                <li><a href="{% url 'portfolio:1st_year' %}">Sub-link 1</a></li>
+                                <li><a href="{% url 'portfolio:1st_year' %}">Sub-link 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#">2nd Year</a>
+                            <ul class="sub-content">
+                                <li><a href="{% url 'portfolio:2nd_year' %}">Sub-link 1</a></li>
+                                <li><a href="{% url 'portfolio:2nd_year' %}">Sub-link 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#">3rd Year</a>
+                            <ul class="sub-content">
+                                <li><a href="{% url 'portfolio:3rd_year' %}">Sub-link 1</a></li>
+                                <li><a href="{% url 'portfolio:3rd_year' %}">Sub-link 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'portfolio:skills' %}">Skills</a></li>
+                        <li><a href="{% url 'portfolio:videos' %}">Videos</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'portfolio:best_sellers' %}">Best Sellers</a></li>
+                <li><a href="{% url 'portfolio:me_by_me' %}">FAQ</a></li>
+                <li><a href="{% url 'portfolio:contact' %}">Contacts</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div id="datetime" style="color: white; font-weight: bold; text-align: right; margin-right: 20px;"></div>
+        <p>&copy;  Susana Wang. All rights reserved.</p>
+    </footer>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const date = now.toLocaleDateString('en-US', options);
+            const time = now.toLocaleTimeString('en-US', { hour12: false });
+            document.getElementById('datetime').innerText = `${date}, ${time}`;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Initial call to set the date and time immediately
+
+    </script>
+</body>
+</html>

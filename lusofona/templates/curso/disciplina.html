@@ -1,0 +1,53 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <article>
+        <h2>{{ disciplina.nome }}</h2>
+        <p>Ano: {{ disciplina.ano }}</p>
+        <p>Semestre: {{ disciplina.semestre }}</p>
+        <p>ECTS: {{ disciplina.ects }}</p>
+        <p>Código Curricular: {{ disciplina.curricularUnitReadableCode }}</p>
+        <p>Área Científica: {{ disciplina.area_cientifica.nome }}</p>
+
+        <h3>Professor Responsável:</h3>
+        {% if disciplina.docentes.all %}
+            <ul>
+                {% for docente in disciplina.docentes.all %}
+                    <li>
+                        <a href="{% url 'cursos:docente' docente.id %}">{{ docente.nome }}</a>
+                        {% if user.is_authenticated %}
+
+                            <a href="{% url 'cursos:edita_docente' docente.id %}" class="btn-edit">Editar</a>
+                            <a href="{% url 'cursos:novo_docente' disciplina.id %}" class="btn-add">Adicionar Docente</a>
+                            <a href="{% url 'cursos:apaga_docente' docente.id %}" class="btn-delete">Apagar</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No professor assigned.</p>
+            {% if user.is_authenticated %}
+                <a href="{% url 'cursos:novo_docente' disciplina.id %}" class="btn-add">Adicionar Docente</a>
+            {% endif %}
+        {% endif %}
+
+        <h3>Projetos Relacionados:</h3>
+        {% if disciplina.projeto %}
+            <ul>
+                <li>
+                    <a href="{% url 'cursos:projeto' disciplina.projeto.id %}">{{ disciplina.projeto }}</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'cursos:edita_projeto' disciplina.projeto.id %}" class="btn-edit">Editar</a>
+                         <a href="{% url 'cursos:novo_projeto' disciplina.id %}" class="btn-add">Adicionar Projeto</a>
+                        <a href="{% url 'cursos:apaga_projeto' disciplina.projeto.id %}" class="btn-delete">Apagar</a>
+                    {% endif %}
+                </li>
+            </ul>
+        {% else %}
+            <p>No projects related.</p>
+            {% if user.is_authenticated %}
+                <a href="{% url 'cursos:novo_projeto' disciplina.id %}" class="btn-add">Adicionar Projeto</a>
+            {% endif %}
+        {% endif %}
+    </article>
+{% endblock %}

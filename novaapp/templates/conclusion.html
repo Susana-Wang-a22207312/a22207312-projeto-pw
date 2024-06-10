@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova app</title>
+</head>
+<body>
+
+    <header>
+        <h1>NOVA APP</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'novaapp:index' %}">Index Qualquer</a>
+        <a href="{% url 'novaapp:example' %}">Exemplo</a>
+        <a href="{% url 'novaapp:conclusion' %}">Conclusão</a>
+    </nav>
+
+    <main>
+      <h2>CONCLUSAO</h2>
+      <p>ESTA PÁGINA VAI ESTAR TODA EM CAPS LOCK</p>
+      <p>SÓ PORQUE SIM</p>
+
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados à Suzy.</p>
+    </footer>
+
+</body>
+</html>

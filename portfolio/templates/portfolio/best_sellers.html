@@ -1,0 +1,42 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block content %}
+<section class="best-sellers">
+    <h2>Best Sellers</h2>
+    <div class="category-grid">
+        <div class="category-item">
+
+            <div class="description">
+                <h3>Aplicação Bandas</h3>
+                <p>This is a description of the Aplicação Bandas, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="{% url 'bandas:bandas' %}" target="_blank">See more for yourself </a>
+            </div>
+        </div>
+        <div class="category-item">
+
+            <div class="description">
+                <h3>Aplicação Artigos</h3>
+                <p>This is a description of the Aplicação Artigos, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="{% url 'blogs:index' %}" target="_blank">See more for yourself</a>
+            </div>
+        </div>
+        <div class="category-item">
+
+            <div class="description">
+                <h3>Aplicação Curso</h3>
+                <p>This is a description of the Aplicação Curso, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="{% url 'cursos:cursos' %}" target="_blank">See more for yourself</a>
+            </div>
+        </div>
+        <div class="category-item">
+
+            <div class="description">
+                <h3>DEISI Chess</h3>
+                <p>This is a description of the DEISI Chess, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">More Info</a>
+            </div>
+        </div>
+        <!-- Add more best seller items as needed -->
+    </div>
+</section>
+{% endblock %}

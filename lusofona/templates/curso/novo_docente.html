@@ -1,0 +1,11 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <h2>Adicionar Docente</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-add">Salvar</button>
+        <a href="{% url 'cursos:disciplina' disciplina.id %}"><button type="button" class="btn-cancel">Cancelar</button></a>
+    </form>
+{% endblock %}

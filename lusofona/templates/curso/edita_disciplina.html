@@ -1,0 +1,11 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <h2>Editar Disciplina</h2>
+    <form method="post" action="{% url 'cursos:edita_disciplina' disciplina.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-edit">Salvar</button>
+        <a href="{% url 'cursos:disciplina' disciplina.id %}"><button type="button" class="btn-cancel">Cancelar</button></a>
+    </form>
+{% endblock %}

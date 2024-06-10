@@ -1,0 +1,26 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h3>Album: {{ album.titulo }}</h3>
+
+    <p>Released by: <a href="{% url 'bandas:banda' album.banda.id %}">{{ album.banda.nome }}</a></p>
+    <p>Genre: {{ album.banda.genero }}</p>
+    <p>Company: {{ album.gravadora }}</p>
+
+    <p>There are {{ album.musicas.all|length }} songs in {{ album.titulo }}:</p>
+    <ul>
+        {% for musica in album.musicas.all %}
+            <li>
+                <a href="{% url 'bandas:musica' musica.titulo %}">{{ musica.titulo }}</a>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'bandas:edita_musica' musica.id %}" class="btn-edit">Edit Song</a>
+                    <a href="{% url 'bandas:apaga_musica' musica.id %}" class="btn-delete">Delete Song</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'bandas:nova_musica' album.id %}" class="btn-add">Add New Song</a>
+    {% endif %}
+{% endblock %}

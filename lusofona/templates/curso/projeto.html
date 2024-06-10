@@ -1,0 +1,15 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <article>
+        <h2><a href="{% url 'cursos:disciplina' projeto.disciplina.id %}">{{ projeto.disciplina }}</a></h2>
+        <p>Descrição: {{ projeto.descricao }}</p>
+        <p>Conceitos Aplicados: {{ projeto.conceitos_aplicados }}</p>
+        <p>Tecnologias Usadas: {{ projeto.tecnologias_usadas }}</p>
+        {% if projeto.imagem %}
+            <img src="{{ projeto.imagem.url }}" alt="Imagem do Projeto">
+        {% endif %}
+        <p>Vídeo Demo: <a href="{{ projeto.video_demo }}">Link para o vídeo</a></p>
+        <p>Repositório no GitHub: <a href="{{ projeto.github_repo }}">Link para o repositório</a></p>
+    </article>
+{% endblock %}

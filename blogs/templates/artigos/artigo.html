@@ -1,0 +1,49 @@
+{% extends 'artigos/layout.html' %}
+
+{% block content %}
+    <article>
+        <h2>{{ artigo.titulo }}</h2>
+        <p>Autor: <a href="{% url 'blogs:autor' artigo.autor.nome %}">{{ artigo.autor.nome }}</a></p>
+        <p>{{ artigo.conteudo }}</p>
+
+        <h3>Classificações:</h3>
+        <ul>
+            {% for rating in artigo.rating_set.all %}
+                <li>
+                    <p>Por: {{ rating.autor_nome }}</p>
+                    <p>Classificação: {{ rating.rating }}</p>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'blogs:edita_rating' rating.id %}" ><button class="btn-edit">Editar</button></a> |
+                        <a href="{% url 'blogs:apaga_rating' rating.id %}"><button class="btn-delete">Apagar</button></a>
+
+                    {% endif %}
+                </li>
+            {% empty %}
+                <li>Nenhuma classificação ainda.</li>
+            {% endfor %}
+        </ul>
+    {% if user.is_authenticated %}
+    <a href="{% url 'blogs:novo_rating' artigo.id %}"><button class="btn-add">Adicionar Classificação</button></a>
+    {% endif %}
+
+        <h3>Comentários:</h3>
+        <ul>
+            {% for comentario in artigo.comentario_set.all %}
+                <li>
+                    <p>Por: {{ comentario.autor_nome }}</p>
+                    <p>{{ comentario.texto }}</p>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'blogs:edita_comentario' comentario.id %}"><button class="btn-edit">Editar</button></a> |
+                        <a href="{% url 'blogs:apaga_comentario' comentario.id %}"><button class="btn-delete">Apagar</button></a>
+
+                    {% endif %}
+                </li>
+            {% empty %}
+                <li>Nenhum comentário ainda.</li>
+            {% endfor %}
+        </ul>
+        {% if user.is_authenticated %}
+   <a href="{% url 'blogs:novo_comentario' artigo.id %}"><button class="btn-add">Adicionar Comentário</button></a>
+    {% endif %}
+    </article>
+{% endblock %}

@@ -1,0 +1,80 @@
+[
+    {
+        "model": "bandas.banda",
+        "pk": 1,
+        "fields": {
+            "nome": "Backstreet Boys",
+            "genero": "Pop",
+            "ano_formacao": 1993,
+            "pais_origem": "United States"
+        }
+    },
+    {
+        "model": "bandas.album",
+        "pk": 1,
+        "fields": {
+            "titulo": "Backstreet Boys",
+            "banda": 1,
+            "gravadora": "Jive Records",
+            "capa_album": "backstreet_boys_album_cover.jpg"
+        }
+    },
+    {
+        "model": "bandas.musica",
+        "pk": 1,
+        "fields": {
+            "titulo": "Quit Playing Games (With My Heart)",
+            "album": 1,
+            "duracao": 230,
+            "numero_faixa": 1
+        }
+    },
+    {
+        "model": "bandas.musica",
+        "pk": 2,
+        "fields": {
+            "titulo": "As Long as You Love Me",
+            "album": 1,
+            "duracao": 231,
+            "numero_faixa": 2
+        }
+    },
+    {
+        "model": "bandas.musica",
+        "pk": 3,
+        "fields": {
+            "titulo": "All I Have to Give",
+            "album": 1,
+            "duracao": 213,
+            "numero_faixa": 3
+        }
+    },
+    {
+        "model": "bandas.musica",
+        "pk": 4,
+        "fields": {
+            "titulo": "I'll Never Break Your Heart",
+            "album": 1,
+            "duracao": 255,
+            "numero_faixa": 4
+        }
+    },
+    {
+        "model": "bandas.membro",
+        "pk": 1,
+        "fields": {
+            "nome": "Nick Carter",
+            "banda": 1,
+            "papel_na_banda": "Vocalist"
+        }
+    },
+    {
+        "model": "bandas.comentario",
+        "pk": 1,
+        "fields": {
+            "autor": "Fan123",
+            "texto": "This album is amazing!",
+            "album": 1
+        }
+    }
+]

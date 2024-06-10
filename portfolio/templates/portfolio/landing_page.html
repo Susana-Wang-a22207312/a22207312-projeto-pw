@@ -1,0 +1,33 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block title %}
+Suzy's Store - Portfolio
+{% endblock %}
+
+{% block content %}
+<section class="about-me">
+      <h4>If you have any questions or you wanna know more about me, be sure to check out&nbsp; <a href="{% url 'portfolio:me_by_me' %}">FAQ</a>.</h4>
+</section>
+
+<section class="categories">
+    <h2>Categories</h2>
+     <div class="category-grid">
+        <div class="category-item"><a href="{% url 'portfolio:1st_year' %}">1st Year</a></div>
+        <div class="category-item"><a href="{% url 'portfolio:2nd_year' %}">2nd Year</a></div>
+        <div class="category-item"><a href="{% url 'portfolio:3rd_year' %}">3rd Year</a></div>
+        <div class="category-item"><a href="{% url 'portfolio:skills' %}">Skills</a></div>
+        <div class="category-item"><a href="{% url 'portfolio:videos' %}">Videos</a></div>
+    </div>
+</section>
+
+<section class="categories">
+    <h2>Best Sellers</h2>
+    <div class="category-grid">
+        <div class="category-item"><a href="{% url 'bandas:bandas' %}"target="_blank">Aplicação Bandas</a></div>
+        <div class="category-item"><a href="{% url 'blogs:index' %}"target="_blank">Aplicação Artigos</a></div>
+        <div class="category-item"><a href="{% url 'cursos:cursos' %}"target="_blank">Aplicação Curso</a></div>
+        <div class="category-item"><a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">DEISI Chess</a></div>
+        <div class="category-item">Meteorologia</div>
+    </div>
+</section>
+{% endblock %}
