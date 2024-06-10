@@ -5,14 +5,14 @@ Suzy's Store - Categories
 {% endblock %}
 
 {% block content %}
-<section class="categories">
+<div style="display: flex; justify-content: center; align-items: center; height: 10vh; margin-bottom: 20px;">
     <h2>Categories</h2>
-    <div class="category-grid">
+    </div>
+    <section class="categories">
         <div class="category-item"><a href="{% url 'portfolio:1st_year' %}">1st Year</a></div>
         <div class="category-item"><a href="{% url 'portfolio:2nd_year' %}">2nd Year</a></div>
         <div class="category-item"><a href="{% url 'portfolio:3rd_year' %}">3rd Year</a></div>
         <div class="category-item"><a href="{% url 'portfolio:skills' %}">Skills</a></div>
         <div class="category-item"><a href="{% url 'portfolio:videos' %}">Videos</a></div>
-    </div>
 </section>
 {% endblock %}

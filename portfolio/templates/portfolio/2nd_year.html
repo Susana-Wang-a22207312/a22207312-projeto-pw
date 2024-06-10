@@ -2,58 +2,60 @@
 
 
 {% block content %}
-<section class="category-content">
-    <h2>2º ano de LEI</h2>
-    <div class="category-grid">
-        <div class="category-item">
+<section class="product-content">
+    <div style="display: flex; justify-content: center; align-items: center; height: 10vh; margin-bottom: 20px;">
+    <h2>2nd Year</h2>
+    </div>
+    <div class="product-grid">
+        <div class="product-item">
             <a href="{% url 'bandas:bandas' %}" target="_blank">
                 <img src="/media/portfolio/icons8-bands-64.png" width="64px">
                 <div class="description">
                     <h3>Aplicação Bandas</h3>
-                    <p>This is a description of the Aplicação Bandas, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>This is a description of the Aplicação Bandas.</p>
                     <a href="{% url 'bandas:bandas' %}" target="_blank">Click <u>HERE</u> to see for yourself</a>
                 </div>
             </a>
         </div>
-        <div class="category-item">
+        <div class="product-item">
             <a href="{% url 'blogs:index' %}" target="_blank">
                 <img src="/media/portfolio/icons8-blog-64.png" width="64px">
                 <div class="description">
                     <h3>Aplicação Artigos</h3>
-                    <p>This is a description of the Aplicação Artigos, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>This is a description of the Aplicação Artigos.</p>
                     <a href="{% url 'blogs:index' %}" target="_blank">Click <u>HERE</u> to see for yourself</a>
                 </div>
             </a>
         </div>
-        <div class="category-item">
+        <div class="product-item">
             <a href="{% url 'cursos:cursos' %}" target="_blank">
                 <img src="/media/portfolio/icons8-universidade-60.png" width="64px">
                 <div class="description">
                     <h3>Aplicação Curso</h3>
-                    <p>This is a description of the Aplicação Curso, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>This is a description of the Aplicação Curso.</p>
                     <a href="{% url 'cursos:cursos' %}" target="_blank">Click <u>HERE</u> to see for yourself</a>
                 </div>
             </a>
         </div>
-        <div class="category-item">
+        <div class="product-item">
             <a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">
                 <img src="/media/portfolio/icons8-jogo-de-xadrez-100.png" width="64px">
                 <div class="description">
                     <h3>DEISI Chess</h3>
-                    <p>This is a description of the DEISI Chess, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>This is a description of the DEISI Chess.</p>
                     <a href="https://github.com/marianalivramento/Kirby-Adventures-DEISI-Chess.git" target="_blank">Click <u>HERE</u> to see for yourself</a>
                 </div>
             </a>
         </div>
-        <div class="category-item">
+        <div class="product-item">
             <img src="/media/portfolio/icons8-tempo-chuvoso-100.png" width="64px">
             <div class="description">
                 <h3>Meteorologia</h3>
-                <p>This is a description of the Meteorologia, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>This is a description of the Meteorologia.</p>
                 <!-- Add your link here if applicable -->
             </div>
         </div>
-        <!-- Add more best seller items as needed -->
+        <!-- Add more product items as needed -->
     </div>
 </section>
 {% endblock %}
